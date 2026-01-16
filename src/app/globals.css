@@ -1,26 +1,45 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --screen-height: 100vh;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
 }
+
+/* Specific screen dimensions */
+/* Mobile 768x360 (when 768px is the height and 360px is the width) */
+@media (width: 360px) and (height: 768px) and (orientation: portrait) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Tablet 1024x1366 (when 1024px is the width and 1366px is the height) */
+@media (width: 1024px) and (height: 1366px) and (orientation: portrait) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Desktop 1024x768 (when 1024px is the width and 768px is the height) */
+@media (width: 1024px) and (height: 768px) and (orientation: landscape) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Desktop 1280x800 (when 1280px is the width and 800px is the height) */
+@media (width: 1280px) and (height: 800px) and (orientation: landscape) {
+  html {
+    font-size: 16px;
+  }
+}
+
