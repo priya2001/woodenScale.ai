@@ -45,7 +45,7 @@ src/
 └── ...
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 First, install dependencies:
 
@@ -69,7 +69,7 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🔧 Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
@@ -84,7 +84,7 @@ The platform is fully responsive with breakpoints configured for:
 - Tablet: 768×1024 to 1024×1366
 - Desktop: 1024×768, 1280×800, and above
 
-## 🎯 Key Components
+## Key Components
 
 ### Navbar
 
