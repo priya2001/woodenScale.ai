@@ -56,17 +56,17 @@ export default function FundraisingJourney() {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* Label */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-black border border-[#f5c96a]/30 rounded-full px-5 py-1 mb-6">
-            <span className="text-[#f5c96a] font-bold text-sm">
+          <div className="inline-block bg-black border border-[#f5c96a]/30 rounded-full px-5 py-2 mb-6">
+            <span className="text-[#f5c96a] text-sm">
               Fundraising journey
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Your focused journey towards fundraising
           </h2>
 
@@ -85,17 +85,16 @@ export default function FundraisingJourney() {
             return (
               <div
                 key={step.number}
-                className="relative font-bold bg-black border border-[#f5c96a]/20 rounded-2xl p-8 hover:border-[#f5c96a]/50 transition-all duration-300"
+                className="relative bg-black border border-[#f5c96a]/20 rounded-3xl p-6 hover:border-[#f5c96a]/50 transition-all duration-300"
               >
                 {/* STEP + ICON ROW */}
                 <div className="flex items-start justify-between mb-4">
-                  <span className="text-sm text-gray-400">
+                  <span className="text-sm tracking-[0.2em] text-gray-400">
                     STEP {step.number}
                   </span>
 
-                  {/* ICON CIRCLE */}
-                  <div className="h-10 w-10 rounded-full border border-white/30 flex items-center justify-center">
-                    <Icon className="h-5 w-5 text-white" />
+                  <div className="h-12 w-12 rounded-full border border-white/30 flex items-center justify-center">
+                    <Icon className="h-6 w-6 text-white" />
                   </div>
                 </div>
 
@@ -107,7 +106,7 @@ export default function FundraisingJourney() {
                   {step.description}
                 </p>
 
-                <div className="mt-6 text-[#f5c96a] text-4xl font-bold opacity-60">
+                <div className="mt-4 text-[#f5c96a] text-2xl font-bold opacity-60">
                   {step.number}
                 </div>
               </div>

@@ -8,14 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+      },
       screens: {
-        'xs': {'max': '767px'},  // Small mobile devices
-        'sm': {'min': '768px', 'max': '1023px'},  // Large mobile, small tablets (768x360, 768x1024)
-        'md': {'min': '1024px', 'max': '1279px'},  // Desktop 1024x768, Tablet 1024x1366
-        'lg': {'min': '1280px'}  // Desktop 1280x800
-      }
+        xs: { max: "767px" },
+        sm: { min: "768px", max: "1023px" },
+        md: { min: "1024px", max: "1279px" },
+        lg: { min: "1280px" },
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

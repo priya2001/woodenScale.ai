@@ -63,30 +63,30 @@ export default function FeaturesSection() {
             <span className="text-[#f5c96a] font-bold text-sm">Our Features</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-2xl font-bold text-white mb-6">
             Everything you need to raise funding successfully
           </h2>
 
-          <p className="text-gray-300 max-w-3xl mx-auto">
-            Comprehensive AI-powered tools to manage your entire fundraising journey.
+          <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed font-medium mb-12">
+          Comprehensive AI-powered tools to help you create pitch decks, match with investors, analyze fundability, project financials, and manage investor relationships.
           </p>
         </div>
 
         {/* Feature Cards */}
-        <div className="space-y-32">
+        <div className="space-y-20">
           {features.map((f, i) => (
             <div
               key={i}
               className="
-                border border-[#f5c96a]/10
-                hover:border-[#f5c96a]/30
+                border border-[#f5c96a]/20
+                hover:border-[#f5c96a]/40
                 rounded-[32px]
                 p-10 sm:p-12 md:p-16
                 grid grid-cols-1 lg:grid-cols-2
                 gap-10 md:gap-20
                 items-center
                 transition-all duration-300
-                hover:shadow-[0_0_40px_rgba(245,201,106,0.25)]
+                hover:shadow-[rgba(245,201,106,0.25)]
               "
             >
             {/* Preview */}
