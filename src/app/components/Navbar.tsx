@@ -11,8 +11,8 @@ export default function Navbar() {
     <nav className="w-full bg-black border-b border-gray-800 z-50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16 relative">
-          
-          
+            
+            
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="w-7 h-7 sm:w-8 md:w-9 sm:h-7 md:h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0">
               <span className="text-black text-xs sm:text-sm font-bold font-sans">WS</span>
@@ -21,8 +21,8 @@ export default function Navbar() {
               WoodenScale
             </span>
           </div>
-
-          
+  
+            
           <div className="absolute left-1/2 -translate-x-1/2 hidden lg:block">
             <Link
               href="/book-demo"
@@ -31,11 +31,11 @@ export default function Navbar() {
               Book a demo
             </Link>
           </div>
-
-          
-          <div className="ml-auto flex items-center gap-1 sm:gap-2 md:gap-4">
+  
             
-             
+          <div className="ml-auto flex items-center gap-1 sm:gap-2 md:gap-4">
+              
+                
             <div className="hidden lg:flex items-center gap-1 sm:gap-2 lg:gap-2 relative">
               <Link
                 href="/blogs"
@@ -43,7 +43,7 @@ export default function Navbar() {
               >
                 Blogs
               </Link>
-
+              
               <div 
                 className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm lg:text-base text-gray-300 hover:text-white hover:bg-gray-700 flex items-center gap-1 cursor-pointer transition-colors duration-200 relative"
                 onClick={() => setIsToolsDropdownOpen(!isToolsDropdownOpen)}
@@ -52,8 +52,8 @@ export default function Navbar() {
                 <svg className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-                
-                
+                              
+                              
                 {isToolsDropdownOpen && (
                   <div className="absolute top-full left-0 mt-1 w-64 bg-gray-800 border border-gray-700 rounded-md shadow-lg z-50">
                     <div className="py-1">
@@ -89,14 +89,14 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-
+  
               <Link
                 href="/pricing"
                 className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm lg:text-base text-gray-300 hover:text-white hover:bg-gray-700 transition-colors duration-200"
               >
                 Pricing
               </Link>
-
+  
               <Link
                 href="/login"
                 className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm lg:text-base text-gray-300 hover:text-white hover:bg-gray-700 transition-colors duration-200"
@@ -104,16 +104,16 @@ export default function Navbar() {
                 Login
               </Link>
             </div>
-
-           
+  
+             
             <Link
               href="/signup"
               className="px-2 sm:px-3 lg:px-4 py-1 rounded-full text-xs sm:text-sm lg:text-base font-medium text-black bg-gradient-to-r from-[#f5c96a] via-[#f5c96a] to-[#f1ad3a] hover:opacity-90 transition-opacity duration-200 whitespace-nowrap"
             >
               Sign Up
             </Link>
-
-            
+  
+              
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden text-gray-300 hover:text-white p-2 rounded-md ml-1 sm:ml-2"

@@ -89,33 +89,44 @@ export default function FeaturesSection() {
                 hover:shadow-[0_0_40px_rgba(245,201,106,0.25)]
               "
             >
-              {/* Preview */}
-              <div className={f.reverse ? 'lg:order-2' : 'lg:order-1'}>
-                <div className="bg-white rounded-2xl p-6 sm:p-7 md:p-9 shadow-2xl transition-shadow duration-300 hover:shadow-[0_0_35px_rgba(245,201,106,0.25)]">
-                  <div className="aspect-video w-full bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
-                    <video
-                      className="w-full h-full object-cover pointer-events-none"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    >
-                      <source
-                        src={
-                          i === 0
-                            ? 'https://woodenscale-assets.s3.ap-south-1.amazonaws.com/assets/home-page-videos/Pitch-deck+demo.mp4'
-                            : i === 1
-                            ? 'https://woodenscale-assets.s3.ap-south-1.amazonaws.com/assets/home-page-videos/Financial+Projection.mp4'
-                            : i === 2
-                            ? 'https://woodenscale-assets.s3.ap-south-1.amazonaws.com/assets/home-page-videos/Investor+Matching+Demo.mp4'
-                            : 'https://woodenscale-assets.s3.ap-south-1.amazonaws.com/assets/home-page-videos/Dashboard+demo.mp4'
-                        }
-                        type="video/mp4"
-                      />
-                    </video>
-                  </div>
-                </div>
-              </div>
+            {/* Preview */}
+<div className={f.reverse ? 'lg:order-2' : 'lg:order-1'}>
+<div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+  
+  {/* Browser Top Bar */}
+  <div className="h-10 bg-gray-100 flex items-center px-4 gap-2">
+    <span className="w-3 h-3 bg-red-400 rounded-full"></span>
+    <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
+    <span className="w-3 h-3 bg-green-400 rounded-full"></span>
+  </div>
+
+  {/* Video Area */}
+  <div className="relative aspect-video bg-black">
+    <video
+      className="absolute inset-0 w-full h-full object-cover"
+      autoPlay
+      muted
+      loop
+      playsInline
+    >
+      <source
+        src={
+          i === 0
+            ? 'https://woodenscale-assets.s3.ap-south-1.amazonaws.com/assets/home-page-videos/Pitch-deck+demo.mp4'
+            : i === 1
+            ? 'https://woodenscale-assets.s3.ap-south-1.amazonaws.com/assets/home-page-videos/Financial+Projection.mp4'
+            : i === 2
+            ? 'https://woodenscale-assets.s3.ap-south-1.amazonaws.com/assets/home-page-videos/Investor+Matching+Demo.mp4'
+            : 'https://woodenscale-assets.s3.ap-south-1.amazonaws.com/assets/home-page-videos/Dashboard+demo.mp4'
+        }
+        type="video/mp4"
+      />
+    </video>
+  </div>
+</div>
+
+</div>
+
 
               {/* Content */}
               <div className={f.reverse ? 'lg:order-1' : 'lg:order-2'}>
