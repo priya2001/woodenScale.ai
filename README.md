@@ -2,6 +2,13 @@
 
 A premium SaaS platform powered by AI to help startups streamline their fundraising journey from ideation to investment.
 
+## Screenshot
+
+![App Output](public/img1.png)
+![App Output](public/img2.png)
+![App Output](public/img3.png)
+![App Output](public/img4.png)
+
 ## Features
 
 - **AI-Powered Pitch Deck Builder** - Create investor-ready pitch decks in minutes
