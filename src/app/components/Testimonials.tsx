@@ -39,7 +39,7 @@ export default function Testimonials() {
     {
       rating: 5,
       quote:
-        "Clear storytelling and right investor matches — loved it.",
+      "WoodenScale made fundraising smoother and faster than expected.",
       name: "Neha",
       company: "Founder",
       avatar: "N",
@@ -58,15 +58,17 @@ export default function Testimonials() {
 
         {/* Header */}
         <div className="mb-10 sm:mb-16">
-          <div className="inline-block border border-[#f5c96a]/20 rounded-full px-7 sm:px-6 py-2 sm:py-4 mb-4">
-            <span className="text-[#f5c96a] font-bold text-xs sm:text-sm">
+          <div className="inline-block border border-[#f5c96a]/20 rounded-full px-7 py-3 mb-4">
+            <span className="text-[#f5c96a] font-bold text-sm">
               Testimonials
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-2xl font-bold text-white mb-6">Loved by founders</h2>
+          <h2 className="text-3xl font-bold mb-6">
+            Loved by founders
+          </h2>
 
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed font-medium mb-12">
+          <p className="max-w-2xl mx-auto text-lg text-gray-300">
             See what founders say about their experience raising capital with WoodenScale AI.
           </p>
         </div>
@@ -75,7 +77,6 @@ export default function Testimonials() {
         <div className="relative h-[420px] sm:h-[520px] flex items-center justify-center">
 
           {testimonials.map((t, index) => {
-            
             const rawOffset = index - active;
             const offset =
               rawOffset > total / 2
@@ -88,21 +89,20 @@ export default function Testimonials() {
               <div
                 key={index}
                 className={`
-                absolute w-[360px] sm:w-[620px] p-10 sm:p-14
-                  bg-black border rounded-3xl border-[#f5c96a]/20
+                  absolute w-[360px] sm:w-[620px] p-10 sm:p-14
+                  bg-black border border-[#f5c96a]/20 rounded-3xl
                   transition-all duration-500 ease-in-out
                   ${
                     offset === 0
                       ? 'z-20 opacity-100 blur-0 translate-x-0 group'
                       : offset === -1
-? 'z-10 opacity-40 blur-[2px] -translate-x-[360px] sm:-translate-x-[560px]'
-: offset === 1
-? 'z-10 opacity-40 blur-[2px] translate-x-[360px] sm:translate-x-[560px]'
-: 'opacity-0 blur-[4px] translate-x-[720px] sm:translate-x-[1100px]'
+                      ? 'z-10 opacity-40 blur-[2px] -translate-x-[360px] sm:-translate-x-[560px]'
+                      : offset === 1
+                      ? 'z-10 opacity-40 blur-[2px] translate-x-[360px] sm:translate-x-[560px]'
+                      : 'opacity-0 blur-[4px] translate-x-[720px] sm:translate-x-[1100px]'
                   }
                 `}
               >
-               
                 {offset === 0 && (
                   <div
                     className="
@@ -115,54 +115,68 @@ export default function Testimonials() {
                 )}
 
                 <div className="relative z-10 text-left">
-
-                  {/* Stars */}
-                  <div className="flex mb-3 sm:mb-4">
+                  <div className="flex mb-4">
                     {[...Array(t.rating)].map((_, i) => (
-                      <span key={i} className="text-[#f5c96a] text-sm sm:text-base">★</span>
+                      <span key={i} className="text-[#f5c96a]">★</span>
                     ))}
                   </div>
 
-                  {/* Quote */}
-                  <p className="text-sm sm:text-lg text-gray-300 mb-4 sm:mb-6">
+                  <p className="text-lg text-gray-300 mb-6">
                     “{t.quote}”
                   </p>
 
-                  {/* Author */}
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="w-8 sm:w-12 h-8 sm:h-12 rounded-full bg-[#f5c96a]
-                      flex items-center justify-center text-black font-bold text-xs sm:text-sm">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#f5c96a]
+                      flex items-center justify-center text-black font-bold">
                       {t.avatar}
                     </div>
 
                     <div>
-                      <div className="font-semibold text-sm sm:text-base">{t.name}</div>
-                      <div className="text-xs sm:text-sm text-gray-400">{t.company}</div>
+                      <div className="font-semibold">{t.name}</div>
+                      <div className="text-sm text-gray-400">{t.company}</div>
                     </div>
                   </div>
-
                 </div>
               </div>
             );
           })}
 
-          {/* Controls */}
+          {/* Desktop arrows */}
+          <div className="hidden sm:block">
+            <button
+              onClick={prev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-30
+                w-12 h-12 rounded-full border border-[#f5c96a]/30
+                text-xl hover:border-[#f5c96a] transition"
+            >
+              ‹
+            </button>
+
+            <button
+              onClick={next}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-30
+                w-12 h-12 rounded-full border border-[#f5c96a]/30
+                text-xl hover:border-[#f5c96a] transition"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile arrows (card ke neeche) */}
+        <div className="flex sm:hidden justify-center gap-6 mt-6">
           <button
             onClick={prev}
-            className="absolute left-2 sm:left-0 z-30 w-8 sm:w-12 h-8 sm:h-12 rounded-full
-              border border-[#f5c96a]/30 text-sm sm:text-xl
-              hover:border-[#f5c96a]
-              transition"
+            className="w-10 h-10 rounded-full border border-[#f5c96a]/30
+              text-lg hover:border-[#f5c96a] transition"
           >
             ‹
           </button>
 
           <button
             onClick={next}
-            className="absolute right-2 sm:right-0 z-30 w-8 sm:w-12 h-8 sm:h-12 rounded-full
-              border border-[#f5c96a]/30 text-sm sm:text-xl
-              hover:border-[#f5c96a]
-              transition"
+            className="w-10 h-10 rounded-full border border-[#f5c96a]/30
+              text-lg hover:border-[#f5c96a] transition"
           >
             ›
           </button>
@@ -175,9 +189,7 @@ export default function Testimonials() {
               key={i}
               onClick={() => setActive(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === active
-                  ? 'bg-[#f5c96a] w-6'
-                  : 'bg-gray-600 w-2'
+                i === active ? 'bg-[#f5c96a] w-6' : 'bg-gray-600 w-2'
               }`}
             />
           ))}
