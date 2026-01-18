@@ -60,7 +60,7 @@ export default function FundraisingJourney() {
 
         {/* Label */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-black border border-[#f5c96a]/30 rounded-full px-5 py-2 mb-6">
+          <div className="inline-block bg-black border border-[#f5c96a]/50 rounded-full px-5 py-2 mb-6">
             <span className="text-[#f5c96a] text-sm">
               Fundraising journey
             </span>

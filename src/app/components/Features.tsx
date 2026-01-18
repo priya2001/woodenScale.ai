@@ -78,8 +78,8 @@ export default function FeaturesSection() {
             <div
               key={i}
               className="
-                border border-[#f5c96a]/20
-                hover:border-[#f5c96a]/40
+                border border-[#f5c96a]/50
+                hover:border-[#f5c96a]/80
                 rounded-[32px]
                 p-10 sm:p-12 md:p-16
                 grid grid-cols-1 lg:grid-cols-2
@@ -94,11 +94,12 @@ export default function FeaturesSection() {
 <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
   
   {/* Browser Top Bar */}
-  <div className="h-10 bg-gray-100 flex items-center px-4 gap-2">
-    <span className="w-3 h-3 bg-red-400 rounded-full"></span>
-    <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
-    <span className="w-3 h-3 bg-green-400 rounded-full"></span>
-  </div>
+<div className="hidden sm:flex h-10 bg-gray-100 items-center px-4 gap-2">
+  <span className="w-3 h-3 bg-red-400 rounded-full"></span>
+  <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
+  <span className="w-3 h-3 bg-green-400 rounded-full"></span>
+</div>
+
 
   {/* Video Area */}
   <div className="relative aspect-video bg-black">

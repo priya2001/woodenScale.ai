@@ -58,7 +58,7 @@ export default function Testimonials() {
 
         {/* Header */}
         <div className="mb-10 sm:mb-16">
-          <div className="inline-block border border-[#f5c96a]/20 rounded-full px-7 py-3 mb-4">
+          <div className="inline-block border border-[#f5c96a]/50 rounded-full px-7 py-3 mb-4">
             <span className="text-[#f5c96a] font-bold text-sm">
               Testimonials
             </span>
@@ -90,7 +90,7 @@ export default function Testimonials() {
                 key={index}
                 className={`
                   absolute w-[360px] sm:w-[620px] p-10 sm:p-14
-                  bg-black border border-[#f5c96a]/20 rounded-3xl
+                  bg-black border border-[#f5c96a]/50 rounded-3xl
                   transition-all duration-500 ease-in-out
                   ${
                     offset === 0
