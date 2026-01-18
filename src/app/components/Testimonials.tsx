@@ -58,21 +58,21 @@ export default function Testimonials() {
 
         {/* Header */}
         <div className="mb-10 sm:mb-16">
-          <div className="inline-block border border-[#f5c96a]/20 rounded-full px-4 sm:px-6 py-1 sm:py-2 mb-4">
+          <div className="inline-block border border-[#f5c96a]/20 rounded-full px-7 sm:px-6 py-2 sm:py-4 mb-4">
             <span className="text-[#f5c96a] font-bold text-xs sm:text-sm">
               Testimonials
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Loved by founders</h2>
+          <h2 className="text-3xl md:text-2xl font-bold text-white mb-6">Loved by founders</h2>
 
-          <p className="max-w-xs sm:max-w-md md:max-w-2xl mx-auto text-sm sm:text-base text-gray-400 px-4">
+          <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed font-medium mb-12">
             See what founders say about their experience raising capital with WoodenScale AI.
           </p>
         </div>
 
         {/* Carousel */}
-        <div className="relative h-[360px] sm:h-[440px] flex items-center justify-center">
+        <div className="relative h-[420px] sm:h-[520px] flex items-center justify-center">
 
           {testimonials.map((t, index) => {
             
@@ -88,8 +88,8 @@ export default function Testimonials() {
               <div
                 key={index}
                 className={`
-                absolute w-[320px] sm:w-[520px] p-8 sm:p-10 rounded-2xl sm:rounded-3xl
-                  bg-black border border-[#f5c96a]/20
+                absolute w-[360px] sm:w-[620px] p-10 sm:p-14
+                  bg-black border rounded-3xl border-[#f5c96a]/20
                   transition-all duration-500 ease-in-out
                   ${
                     offset === 0
