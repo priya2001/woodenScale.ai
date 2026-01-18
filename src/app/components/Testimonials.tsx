@@ -52,125 +52,117 @@ export default function Testimonials() {
   const prev = () => setActive((p) => (p - 1 + total) % total);
   const next = () => setActive((p) => (p + 1) % total);
 
-  const visibleCards = [-1, 0, 1].map((offset) => {
-    const index = (active + offset + total) % total;
-    return { ...testimonials[index], index };
-  });
-
   return (
-    <section className="py-24 bg-black text-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+    <section className="py-16 sm:py-20 md:py-24 bg-black text-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
 
         {/* Header */}
-        <div className="mb-16">
-          <div className="inline-block border border-[#f5c96a]/20 rounded-full px-6 py-1.5 mb-4">
-            <span className="text-[#f5c96a] font-bold text-sm">Testimonials</span>
+        <div className="mb-10 sm:mb-16">
+          <div className="inline-block border border-[#f5c96a]/20 rounded-full px-4 sm:px-6 py-1 sm:py-2 mb-4">
+            <span className="text-[#f5c96a] font-bold text-xs sm:text-sm">
+              Testimonials
+            </span>
           </div>
 
-          <h2 className="text-3xl md:text-2xl font-bold mb-6">
-            Loved by founders
-          </h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Loved by founders</h2>
 
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400">
-          See what founders says about their experience raising capital and finding great investments through WoodenScale AI.
+          <p className="max-w-xs sm:max-w-md md:max-w-2xl mx-auto text-sm sm:text-base text-gray-400 px-4">
+            See what founders say about their experience raising capital with WoodenScale AI.
           </p>
         </div>
 
         {/* Carousel */}
-        <div className="relative flex items-center justify-center">
+        <div className="relative h-[360px] sm:h-[440px] flex items-center justify-center">
 
-          {/* Prev */}
+          {testimonials.map((t, index) => {
+            
+            const rawOffset = index - active;
+            const offset =
+              rawOffset > total / 2
+                ? rawOffset - total
+                : rawOffset < -total / 2
+                ? rawOffset + total
+                : rawOffset;
+
+            return (
+              <div
+                key={index}
+                className={`
+                absolute w-[320px] sm:w-[520px] p-8 sm:p-10 rounded-2xl sm:rounded-3xl
+                  bg-black border border-[#f5c96a]/20
+                  transition-all duration-500 ease-in-out
+                  ${
+                    offset === 0
+                      ? 'z-20 opacity-100 blur-0 translate-x-0 group'
+                      : offset === -1
+? 'z-10 opacity-40 blur-[2px] -translate-x-[360px] sm:-translate-x-[560px]'
+: offset === 1
+? 'z-10 opacity-40 blur-[2px] translate-x-[360px] sm:translate-x-[560px]'
+: 'opacity-0 blur-[4px] translate-x-[720px] sm:translate-x-[1100px]'
+                  }
+                `}
+              >
+               
+                {offset === 0 && (
+                  <div
+                    className="
+                      pointer-events-none absolute inset-0 rounded-3xl
+                      opacity-0 group-hover:opacity-100
+                      transition-opacity duration-300
+                      bg-[radial-gradient(circle_at_center,rgba(245,201,106,0.25),transparent_70%)]
+                    "
+                  />
+                )}
+
+                <div className="relative z-10 text-left">
+
+                  {/* Stars */}
+                  <div className="flex mb-3 sm:mb-4">
+                    {[...Array(t.rating)].map((_, i) => (
+                      <span key={i} className="text-[#f5c96a] text-sm sm:text-base">★</span>
+                    ))}
+                  </div>
+
+                  {/* Quote */}
+                  <p className="text-sm sm:text-lg text-gray-300 mb-4 sm:mb-6">
+                    “{t.quote}”
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-8 sm:w-12 h-8 sm:h-12 rounded-full bg-[#f5c96a]
+                      flex items-center justify-center text-black font-bold text-xs sm:text-sm">
+                      {t.avatar}
+                    </div>
+
+                    <div>
+                      <div className="font-semibold text-sm sm:text-base">{t.name}</div>
+                      <div className="text-xs sm:text-sm text-gray-400">{t.company}</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            );
+          })}
+
+          {/* Controls */}
           <button
             onClick={prev}
-            className="absolute left-8 z-30 w-12 h-12 rounded-full
-              border border-[#f5c96a]/30 text-xl
-              transition-all duration-200 ease-out
+            className="absolute left-2 sm:left-0 z-30 w-8 sm:w-12 h-8 sm:h-12 rounded-full
+              border border-[#f5c96a]/30 text-sm sm:text-xl
               hover:border-[#f5c96a]
-              hover:shadow-[0_0_0_6px_rgba(245,201,106,0.1)]"
+              transition"
           >
             ‹
           </button>
 
-          {/* Cards */}
-          <div className="flex items-center gap-8">
-            {visibleCards.map((t, i) => {
-              const isActive = i === 1;
-
-              return (
-                <div
-                  key={i}
-                  className={`
-                    relative w-[420px] p-8 rounded-2xl border
-                    transition-all duration-300 ease-in-out transform
-                    ${
-                      isActive
-                        ? `
-                          bg-[#111]
-                          border-[#f5c96a]/40
-                          scale-100
-                          opacity-100
-                          blur-0
-                          z-20
-                          hover:-translate-y-1
-                          hover:shadow-[0_10px_30px_-10px_rgba(245,201,106,0.25)]
-                        `
-                        : `
-                          bg-[#0b0b0b]
-                          border-[#f5c96a]/10
-                          scale-90
-                          opacity-40
-                          blur-[1px]
-                        `
-                    }
-                  `}
-                >
-                  {/* Glow */}
-                  {isActive && (
-                    <div className="absolute inset-0 rounded-2xl pointer-events-none
-                      bg-[radial-gradient(circle_at_30%_20%,rgba(245,201,106,0.12),transparent_60%)]" />
-                  )}
-
-                  <div className="relative z-10">
-
-                    {/* Stars */}
-                    <div className="flex mb-4">
-                      {[...Array(t.rating)].map((_, j) => (
-                        <span key={j} className="text-[#f5c96a]">★</span>
-                      ))}
-                    </div>
-
-                    {/* Quote */}
-                    <p className="text-gray-300 italic mb-6">
-                      “{t.quote}”
-                    </p>
-
-                    {/* Author */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-[#f5c96a] rounded-full
-                        flex items-center justify-center text-black font-bold">
-                        {t.avatar}
-                      </div>
-
-                      <div className="text-left">
-                        <h4 className="font-semibold">{t.name}</h4>
-                        <p className="text-sm text-gray-400">{t.company}</p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Next */}
           <button
             onClick={next}
-            className="absolute right-8 z-30 w-12 h-12 rounded-full
-              border border-[#f5c96a]/30 text-xl
-              transition-all duration-200 ease-out
+            className="absolute right-2 sm:right-0 z-30 w-8 sm:w-12 h-8 sm:h-12 rounded-full
+              border border-[#f5c96a]/30 text-sm sm:text-xl
               hover:border-[#f5c96a]
-              hover:shadow-[0_0_0_6px_rgba(245,201,106,0.1)]"
+              transition"
           >
             ›
           </button>
@@ -179,8 +171,9 @@ export default function Testimonials() {
         {/* Dots */}
         <div className="flex justify-center mt-10 gap-2">
           {testimonials.map((_, i) => (
-            <div
+            <button
               key={i}
+              onClick={() => setActive(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 i === active
                   ? 'bg-[#f5c96a] w-6'
@@ -189,6 +182,7 @@ export default function Testimonials() {
             />
           ))}
         </div>
+
       </div>
     </section>
   );
